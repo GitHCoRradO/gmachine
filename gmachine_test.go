@@ -42,7 +42,7 @@ func TestHalt(t *testing.T) {
 func TestNOOP(t *testing.T) {
 	t.Parallel()
 	g := gmachine.New()
-	g.RunProgram([]uint64 {
+	g.RunProgram([]uint64{
 		gmachine.OpNOOP,
 		gmachine.OpHALT,
 	})
@@ -60,7 +60,7 @@ func TestINCA(t *testing.T) {
 	var want uint64 = 1
 	got := g.A
 	if want != got {
-		t.Errorf("want %d, got %d", want ,got)
+		t.Errorf("want %d, got %d", want, got)
 	}
 }
 
@@ -71,7 +71,7 @@ func TestDECA(t *testing.T) {
 	var want uint64 = 1
 	got := g.A
 	if want != got {
-		t.Errorf("want %d, got %d", want ,got)
+		t.Errorf("want %d, got %d", want, got)
 	}
 }
 
@@ -82,18 +82,18 @@ func TestProgramSubtract2From3(t *testing.T) {
 	var want uint64 = 1
 	got := g.A
 	if want != got {
-		t.Errorf("want %d, got %d", want ,got)
+		t.Errorf("want %d, got %d", want, got)
 	}
 }
 
 func TestSETA(t *testing.T) {
 	t.Parallel()
 	g := gmachine.New()
-	g.RunProgram([]uint64 {gmachine.OpSETA, 5})
+	g.RunProgram([]uint64{gmachine.OpSETA, 5})
 	var want uint64 = 5
 	got := g.A
 	if want != got {
-		t.Errorf("want %d, got %d", want ,got)
+		t.Errorf("want %d, got %d", want, got)
 	}
 }
 
@@ -123,6 +123,5 @@ func TestSubtract2(t *testing.T) {
 	if want5 != got5 {
 		t.Errorf("want: %d got: %d", want5, got5)
 	}
-
 
 }
